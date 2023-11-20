@@ -1,4 +1,545 @@
-C VRAI
+
+https://medium.com/globant/monitoring-and-alerting-using-datadog-7459dd9186ae
+
+Introduction
+├── Datadog
+│   └── Monitoring and analytics tool
+├── Background
+│   ├── AWS CloudWatch limitations
+│   └── Datadog dashboards & monitors
+├── Configuring Datadog
+│   ├── Prerequisites
+│   ├── 6 Steps
+│   │   └── Installing the Datadog Agent
+│   └── Establishing connectivity between AWS and Datadog
+├── Creating the Dashboard
+│   └── Modifying templates for EC2 and RDS
+├── Creating Monitors for Alerting
+│   ├── Defining widgets, metrics and alert conditions
+│   └── Sending notifications to email or Slack
+├── Pros/Cons
+│   ├── Datadog benefits
+│   ├── Pricing considerations
+└── Conclusion
+    └── Use case dependent
 
 
-ZAHYA
+================================================
+
+https://medium.com/avmconsulting-blog/why-you-should-consider-using-a-monitoring-platform-like-datadog-54e069875bd2
+
+Introduction
+├── Modern Application Architecture
+│   └── Complexity and Challenges
+├── Need for Observability
+│   └── Inferring Internal State from External Outputs
+├── Datadog as an Observability Platform
+│   ├── Unified Solution for Observability
+│   ├── Collecting Data from Metrics, Logs, and Traces
+│   ├── Correlating Data for Holistic View
+├── Datadog's Approach to Observability
+│   ├── Metrics Collection and Visualization
+│   ├── Log Collection, Processing, and Extraction
+│   ├── Tracing for Distributed Architectures
+│   └── Correlation of Observability Data
+└── Conclusion
+    └── Observability for Modern Applications and Datadog's Solution
+
+================================================================================================
+https://medium.com/@pgulshetty/application-monitoring-and-alerting-using-datadog-f0f08c3f7696
+
+Introduction
+├── Monitoring and Alerting
+│   └── Significance in Application Management
+├── Monitoring and Collecting Data
+│   ├── Application Performance Monitoring (APM)
+│   ├── Resource Monitoring
+│   ├── Feature Monitoring
+│   └── Metrics and Events
+│       ├── Metrics
+│       └── Events
+├── Alerting
+│   └── Informing Users When Conditions Are Met
+├── Setting Monitoring and Sending Notification to Slack
+│   ├── Enabling Integration Between Datadog and Slack
+│   ├── Creating Monitoring in Datadog
+│   └── Defining Monitor to Send Alert to Slack
+└── Demo Setup
+    └── Instructions on Running the Application
+
+================================================================================================
+https://medium.com/@MetricFire/prometheus-vs-datadog-526b0cb88509
+
+Comparison of Prometheus, Datadog, and Hosted Graphite
+├── Key Comparison Points
+│   ├── Prometheus: Open-source and free
+│   ├── Datadog: Proprietary and paid
+│   ├── MetricFire's Hosted Graphite: Hosted Prometheus with scaling
+├── When to Use Each Solution
+│   ├── Prometheus: Time-series monitoring, long-term storage, tagging, cross-source alerts, Grafana integration
+│   ├── Datadog: Infrastructure and application monitoring, data visualization, team collaboration, event alerting
+│   ├── Hosted Graphite: Time-series monitoring, long-term storage, tagging, cross-source alerts, Grafana integration (as part of the same service)
+├── Pricing Comparison
+│   ├── Prometheus: Free
+│   ├── Datadog: Paid, starting at $23 per host per month
+│   ├── Hosted Graphite: Scales rapidly based on usage
+└── Key Takeaways
+├── Prometheus: Free and open-source time-series monitoring
+├── Datadog: Paid all-around monitoring solution
+├── Hosted Graphite: Hosted Prometheus with scaling and lower cost
+
+================================================================================================
+https://alexalvess.medium.com/maximizing-observability-and-monitoring-with-datadog-6d48d660fb66
+
+
+Monitoring and Alerting
+│   ├── Monitoring
+│   │   ├── Data Collection
+│   │   │   ├── Application Performance Monitoring (APM)
+│   │   │   ├── Resource Monitoring
+│   │   │   ├── Feature Monitoring
+│   │   │   └── Metrics and Events
+│   │   ├── Real-time Metrics
+│   │   │   ├── CPU and Memory Usage
+│   │   │   ├── Network Latency
+│   │   │   ├── Error Rate
+│   │   │   └── Network Traffic
+│   │   ├── Logs
+│   │   │   ├── Log Tracking and Analysis
+│   │   │   ├── Error Logs
+│   │   │   ├── Cloud Resource Usage
+│   │   │   └── Custom Views and Dashboards
+│   │   └── Traces
+│   └── Alerting
+│       ├── Notifications and Alerts
+│       │   ├── Dead-Letter-Queues
+│       │   ├── Http Client Communication
+│       │   ├── Product Validation
+│       │   └── Integrating into Google Chats
+│   └── Use Cases
+│       ├── Use Cases of Alerts
+│       └── Use Cases of Custom Views
+└── Conclusion
+    ├── Pros of Datadog
+    └── Cons of Datadog
+
+
+
+================================================================================================
+https://medium.com/@aashirjaved/efficient-deployment-of-datadog-dashboards-and-monitoring-using-terraform-2cc17487bc01
+
+use 6 levels OF │   ├──   : 
+
+Infrastructure as Code using Terraform for Datadog Dashboards and Monitoring
+│   ├── Introduction
+│   │   ├── Datadog
+│   │   │   ├── Real-time performance tracking
+│   │   │   └── Visualization tools
+│   │   └── Terraform
+│   │       ├── Open-source infrastructure as code tool
+│   │       │   ├── Declarative configuration language
+│   │       │   ├── Version control integration
+│   │       └── Continuous deployment capabilities
+│   ├── Deploying Datadog Dashboards with Terraform
+│   │   ├── Set Up
+│   │   │   ├── Terraform installation
+│   │   │   └── Datadog API and App key access
+│   │   ├── Terraform Provider for Datadog
+│   │   │   └── Provider configuration
+│   │   ├── Defining the Dashboard Resource
+│   │   │   ├── Dashboard configuration parameters
+│   │   │   ├── Dashboard widgets and layout
+│   │   └── Apply Changes
+│   │       ├── `terraform plan` command
+│   │       └── `terraform apply` command
+│   └── Creating Monitors with Terraform
+│       ├── Defining a Datadog Monitor
+│       │   ├── Monitor configuration parameters
+│       │   └── Monitor notification settings
+└── Conclusion
+    ├── Benefits of Using Terraform for Datadog
+    │   ├── Error-free deployments
+    │   ├── Version control compatibility
+    │   └── Automated monitoring setup
+    └── Shift to Automatic and Error-free Deployments
+        ├── Efficient DevOps culture
+        └── Improved software reliability
+
+================================================================================================
+https://medium.com/@tech-add/insight-of-monitoring-tool-datadog-a649a3bcf8cc
+
+│   ├── Introduction to DataDog
+│   │   ├── Cloud-based Monitoring Platform
+│   │   │   ├── Provides a complete view of infrastructure, applications, and logs
+│   │   │   └── Hailed as one of the most popular and powerful monitoring tools
+│   │   └── SaaS-based Solution
+│   │       ├── Helps organizations manage and monitor their entire stack
+│   │       ├── Comprehensive monitoring system for quick issue identification and resolution
+│   │       └── User-friendly interface for easy monitoring, troubleshooting, and optimization
+│   ├── Flexibility and Integrations
+│   │   ├── Over 400 Integrations
+│   │   │   ├── Monitors the entire stack from infrastructure to application layer
+│   │   │   └── Easy access and analysis of information through various channels
+│   │   └── Flexible Monitoring Capabilities
+│   │       ├── Machine learning algorithms for anomaly detection and alerting
+│   │       └── Real-time monitoring of mission-critical systems
+│   ├── Collaboration and Ease of Use
+│   │   ├── Dashboard Sharing and Alert Collaboration
+│   │   │   ├── Enables better team collaboration through shared dashboards and alerts
+│   │   │   └── Facilitates effective issue identification and resolution
+│   │   └── Integration with Existing Tools
+│   │       ├── Extensive and customizable developer API
+│   │       └── Seamless integration with existing workflows and tools
+│   └── Benefits of DataDog
+│       ├── Comprehensive and Flexible Monitoring
+│       │   ├── Provides a holistic view of the infrastructure, applications, and logs
+│       │   └── Enables monitoring of the entire stack from infrastructure to application layer
+│       ├── Excellent Monitoring and Alerting Capabilities
+│       │   ├── Machine learning-powered anomaly detection and alerting
+│       │   └── Real-time monitoring of mission-critical systems
+│       └── Intuitive Interface and Easy Collaboration
+│       │   ├── User-friendly interface for easy monitoring, troubleshooting, and optimization
+│       │   └── Dashboard sharing and alert collaboration for effective team communication
+│   └── DataDog Configuration
+│       ├── Installation and Setup
+│       │   ├── Installation of the Datadog agent for data collection
+│       │   └── Configuration of the agent using API key and hostname
+│       ├── Configuration of Integrations
+│       │   ├── Enabling integrations for metrics and metadata collection
+│       │   └── Common integrations include databases, load balancers, cloud platforms, and web servers
+│       ├── Creating Dashboards
+│       │   ├── Creation of customized dashboards for system health and performance snapshots
+│       │   └── Addition, removal, and customization of graphs, visualization types, and alerting settings
+│       ├── Setting up Alerts
+│       │   ├── Defining thresholds for metric-based alerts and notifications
+│       │   └── Setting up notification channels and customization of alert notifications
+│       └── Managing Permissions
+│       │   ├── Role definition based on different access levels
+│       │   └── User assignment to specific roles and permission granting or revocation
+│   └── Issues with DataDog
+│       ├── Complexity and Expertise Requirement
+│       │   ├── Overwhelming for new users due to the platform's many features and functionalities
+│       │   └── Requires in-depth understanding of programming languages, logging mechanisms, and analytical tools
+│       ├── Cost Considerations
+│       │   ├── Subscription-based model with data ingestion-based pricing
+│       │   └── Expensive for organizations with limited budgets and high data generation
+│       ├── Limited Customization Options
+│       │   ├── Limited options for customizing dashboards, notifications, and integrations
+│       │   └── May require external tools for specific use cases
+│       └── Performance Issues with Large Data Volumes
+│       │   ├── Lags and slow queries when handling large amounts of data
+│       │   └── Requires constant optimization and resource allocation
+│   └── Conclusion and Recommendation
+│       ├── Strong Recommendation for DataDog
+│       │   ├── Powerful and versatile monitoring tool for detailed dashboard creation and comprehensive monitoring
+│       │   └── Valuable insights for system optimization and performance scaling
+│       └── Hope this blog helps you learn the tool
+
+
+================================================================================================
+
+https://medium.com/@TechBrainTrust/datadog-a-comprehensive-guide-to-modern-monitoring-and-analytics-3e81a7f21100
+
+
+Sure, here is a simplified hierarchical structure of the given document using │ and ├──, with 7 levels:
+
+Introduction:
+│   ├── Datadog in the Fast-Paced Digital Landscape
+│   │   ├── Technology Infrastructure as a Key Success Factor
+│   │   └── Importance of Robust Monitoring and Analytics
+
+Understanding Datadog:
+│   ├── Datadog as a Cloud-Based Monitoring and Analytics Platform
+│   │   ├── Real-time Insights into Infrastructure, Applications, and Services
+│   │   ├── Data Collection, Visualization, and Analysis from Diverse Sources
+│   │   └── Comprehensive Features for Proactive Issue Identification and Resolution
+
+Key Features and Capabilities:
+│   ├── Infrastructure Monitoring
+│   │   │   ├── Deep Visibility into Infrastructure Health and Performance
+│   │   │   ├── Real-time Monitoring, Alerts, and Dashboards for Resource Utilization, Network Traffic, and System Health
+│   │   └── Application Performance Monitoring (APM)
+│   │       ├── Insights into Application Performance and Bottleneck Identification
+│   │       ├── End-to-end Tracing, Error Tracking, and Code-level Visibility for Application Performance Optimization
+│   ├── Log Management
+│   │   │   ├── Centralized Log Data and Valuable Insights Extraction
+│   │   │   ├── Real-time Log Collection, Searching, and Analysis for Troubleshooting, Anomaly Detection, and Compliance
+│   │   └── Synthetic Monitoring
+│   │       ├── Monitoring of Website and Application Availability and Performance from Global Locations
+│   │       ├── Detailed Reports, Alerting, and Performance Optimization Suggestions
+│   └── Real User Monitoring (RUM)
+│       ├── Understanding of Real User Interactions with Websites and Applications
+│       ├── User Data Capture, including Page Load Times, Browser Performance, and User Actions for User Experience and Conversion Rate Improvement
+
+Benefits and Use Cases:
+│   ├── Proactive Monitoring for Issue Identification and Resolution before User Impact or Business Process Disruption
+│   ├── Improved Performance and Scalability through Infrastructure and Application Performance Insights
+│   ├── Enhanced Collaboration and Communication through Centralized Platform for Team Collaboration and Insights Sharing
+│   ├── Cost Optimization by Resource Utilization Monitoring and Inefficiency Identification
+│   ├── Compliance and Security Enhancement with Log Management, Security Monitoring, and Regulation Compliance
+
+Conclusion:
+│   ├── Datadog's Emergence as a Leading Monitoring and Analytics Solution
+│   ├── Real-time Insights into Infrastructure, Applications, and User Behavior
+│   ├── Comprehensive Features for Proactive Issue Identification, Performance Optimization, and Data-driven Decision Making
+│   ├── Improvement of Operational Efficiency, User Experience, and Business Growth through Datadog's Capabilities
+
+
+
+================================================================================================
+https://medium.com/hostspaceng/creating-datadog-monitors-and-alert-by-code-on-kubernetes-e6c682b5aaff
+
+
+Introduction
+│   ├── Datadog as a Monitoring and Analytics Tool
+│   │   ├── Infrastructure and Cloud Services Monitoring
+│   │   └── Datadog Monitors for Automated Alerts
+Prerequisites
+│   ├── Amazon EKS Cluster Setup
+│   │   └── Cluster for Datadog and Datadog Operator Deployment
+│   ├── ArgoCD Installation
+│   │   └── GitOps-style Deployment of Datadog and Datadog Operator
+│   ├── Datadog Installation on Kubernetes Cluster
+│   │   └── Datadog Monitoring and Analytics
+│   └── Datadog Operator Installation
+│       ├── Automated Datadog Monitor Creation and Management
+│       └── Operator for GitOps-style Deployment of Datadog and Datadog Operator
+Creating a Datadog Monitor by Code
+│   ├── CrashLoopBackOff State Alert Monitor
+│   │   ├── Query for Identifying Pods in CrashLoopBackOff State
+│   │   ├── Alert Message and Notification Settings
+│   │   └── Monitor Configuration and Application
+│   └── Monitor Verification in Datadog UI
+Deleting the Created Datadog Monitor
+│   ├── Command for Removing the CrashLoopBackOff Monitor
+Conclusion
+│   ├── Automated Datadog Monitoring Setup on Kubernetes
+│   │   ├── Installation of Datadog and Datadog Operator
+│   │   └── Creation of Datadog Monitors by Code
+│   └── Streamlined Monitoring and Alerting Process for DevOps Teams
+
+
+================================================================================================
+
+https://medium.com/@Mubashar_Chand/a-deep-dive-into-datadogs-fast-growing-monitoring-platform-85d865ac7cc0
+
+Datadog’s Modern Observability Platform
+│   ├── Traditional Monitoring Limitations
+│   │   └── Inability to Handle Complex, Distributed Systems
+│   ├── Datadog: A Leading Solution for Observability
+│   │   ├── Unified Platform for Monitoring, Logging, and APM
+│   │   ├── Auto-Discovery and Extensive Integrations
+│   │   ├── Real-Time Visualization for Actionable Insights
+│   │   ├── Advanced Alerting and Anomaly Detection
+│   │   └── End-to-End Tracing for Performance Optimization
+│   ├── Datadog in Action: Cloud Migration
+│   │   ├── Smooth Migration from Legacy to Cloud Infrastructure
+│   │   └── Real-time Visibility and Anomaly Detection
+│   ├── Benefits of Using Datadog
+│   │   ├── Reduced Downtime and Improved Uptime
+│   │   ├── Enhanced DevOps Collaboration
+│   │   ├── Optimized Cloud Costs
+│   │   ├── Effective Service Scaling
+│   │   ├── Proactive Issue Resolution
+│   │   ├── Microservices Visibility
+│   │   └── Improved Third-Party Integration Performance
+│   └── Datadog and CloudXpertize: A Powerful Partnership
+│       ├── Holistic View of IT Landscape
+│       ├── Swift Identification of Anomalies and Performance Bottlenecks
+│       ├── Customizable Dashboards and Real-Time Visualizations
+│       └── CloudXpertize Expertise for Implementation and Tailored Solutions
+│           └── Strategic Growth and Technological Prowess
+
+================================================================================================
+https://medium.com/@chachia.mohamed/datadog-is-the-modern-monitoring-tool-1922968fca77
+
+Monitoring in DevOps Lifecycle:
+│   ├── Importance of Monitoring for Application Stability and Error Resolution
+│   ├── DATADOG as a Monitoring Tool:
+│   │   ├── SaaS-Based Monitoring Service for Applications, Servers, Infrastructure, Databases, Networks, and Services
+│   │   ├── Features:
+│   │   │   ├── Single View of Infrastructure
+│   │   │   ├── Customizable Dashboards
+│   │   │   ├── Alert Notifications via Email, Slack, PagerDuty, Webhooks, etc...
+│   │   │   ├── Tools for Team Collaboration
+│   │   │   └── Support for over 250 Product Integrations
+│   │   │       └── Custom Live Log Collections and Analytics
+│   │   ├── Discovering DATADOG:
+│   │   │   ├── Events:
+│   │   │   │   ├── Search, Analyze, and Filter Events from Any Source with Datadog Events Interface
+│   │   │   │   ├── Automatic Event Gathering by Datadog Events
+│   │   │   │   ├── Support for over 100 Datadog Integrations for Event Gathering
+│   │   │   │   └── Filter by User, Source, Tag, Host, Status, Priority, Incident
+│   │   │   ├── Dashboards:
+│   │   │   │   ├── Analyze, Examine, and Visually Display Important Performance Data with 2 Types of Dashboards (Timeboard, Screenboard)
+│   │   │   └── Infrastructure:
+│   │   │       ├── Complete Infrastructure Performance Visibility with Simple Deployment and Little Maintenance
+│   │   │       └── Monitor All Hosts with Datadog Application
+│   │   │   ├── Monitors:
+│   │   │   │   ├── Different Types of Monitoring (Host, Metric, Network, Logs, etc.)
+│   │   │   │   └── Set and Alert Notification Message via Slack, PagerDuty, Webhooks, Email
+│   │   │   └── APM:
+│   │   │       ├── Complete Visibility into Applications with Pre-Built Performance Dashboards for Databases, Web Services, and Queues
+│   │   │       ├── Monitor Service Dependencies and Health Metrics for Best User Experience
+│   │   │       └── Reduce Latency and Error-Making with Datadog APM
+│   │   └── CI Visibility:
+│   │       ├── Identify Commits that Cause Important Development Outages and Debug Test Failures and Failed Builds
+
+
+================================================================================================
+https://cherkaskyb.medium.com/the-magic-that-is-datadog-pricing-part-ii-5fa56cd8476e
+
+Datadog Pricing Overview
+│   ├── Datadog Pricing Models
+│   │   ├── Host Based Products
+│   │   │   ├── Pricing Model: Concurrent Active Hosts
+│   │   │   ├── Unexpected Billing Due to Elastic Systems
+│   │   │   └── Datadog's Justification for P99 Billing
+│   │   ├── Volume Based Products
+│   │   │   ├── Pricing Model: Per Unit Usage
+│   │   │   ├── Commitment Model: Commit to Volume for Reduced Price
+│   │   │   └── Datadog's Logs Pricing Structure
+│   │   │       ├── Ingestion Billing
+│   │   │       ├── Indexing Billing
+│   │   │       └── Rehydration Billing
+│   │   └── User Based Products
+│   │       ├── Pricing Model: Per Active User
+│   └── Additional Products
+│       ├── Buy One Get Some for Free (BOGOF) Products
+│       │   ├── Definition and Behavior of BOGOF Products
+│       ├── Containers, Custom Metrics, and Index Spans
+│       │   ├── Challenges of Controlling Container Monitoring Costs
+│       │   │   ├── Impact of Containers on Host-Monitoring Cost
+│       │   │   └── Datadog's Attempt to Average Out Container Cost Outliers
+│       │   └── Challenges of Controlling Custom Metrics Cost
+│       │       ├── Impact of Tag Value Cardinality on Cost
+│       │       ├── Importance of Choosing the Right Observability Primitive
+│       │   └── Complexity of Datadog's Pricing Mental Model
+│       │       ├── Large Number of Products and Pricing Models
+│       │       ├── Difficulty in Understanding and Forecasting Usage
+│       │       ├── Unreasonable Expectations Placed on FinOps and Dev Teams
+│       │       └── Budgeting and Cost Allocation as a Guessing Game
+
+
+================================================================================================
+
+https://medium.com/javarevisited/check-for-datadog-metric-usage-56f3f1ba4764
+
+
+Sure, here is a simplified hierarchical structure of the given document using | and ├──, with 6 levels:
+
+Datadog Metric Usage Analysis
+│   ├── Problem Statement
+│   │   ├── Difficulty in Identifying Unnecessary Metrics Due to Heavy Datadog Usage
+│   │   └── Manual Checking of All Dashboards and Monitors Impractical
+│   ├── Solution: Script to Identify Metric Usage
+│   │   ├── Prerequisites
+│   │   │   ├── Installation of Python3 and Requests Library
+│   │   │   ├── Creation of API Key and Application Key with Monitors_Read and Dashboards_Read Scopes
+│   │   ├── Script Usage
+│   │   │   ├── Assigning Values to Variables: baseUrl, ddAPIKey, ddApplicationKey, logGeneratedMetrics
+│   │   │   ├── Running the Script: python3 checkUsage.py or python3 checkUsage.py > checkUsageOutput
+│   │   └── Script Operation
+│   │       ├── checkUsageInMonitors(): Checks Metric Usage in Monitors
+│   │       ├── checkUsageInDashboards(): Checks Metric Usage in Dashboards
+│   │       └── (Optional) Identification of Exact Widget Containing the Metric
+
+
+================================================================================================
+https://medium.com/@ddiscua/monitoring-alerts-using-datadog-logs-9e828737e34
+
+Monitoring Alerts in Datadog
+│   ├── Prerequisites
+│   │   ├── Datadog Account and Integrated Applications or Infrastructure
+│   │   ├── Defined Metrics and Thresholds
+│   ├── Creating a Log Monitor
+│   │   ├── Filter Logs by Service and Status
+│   │   ├── Set Alert Conditions
+│   │   ├── Notify Your Team via Email
+│   │   ├── Define Variables to Include in Email Notification
+│   │   └── Click "Create Monitor"
+│   ├── Running the Script
+│   │   ├── Import LOGGER and runApp Functions
+│   │   ├── Run the runApp Function
+│   ├── Sending Logs to the Application
+│   └── Conclusion
+│       ├── Empowering Real-Time Issue Detection and Resolution
+│       ├── Configuring Log-Based Monitors, Triggers, and Proactive Actions
+│       ├── Ensuring Prompt Detection and Resolution of Potential Problems
+│       ├── Enhancing Operational Efficiency and Maintaining Resilient Infrastructure
+│       └── Leveraging the Power of Log Monitoring with Datadog
+
+================================================================================================
+https://aws.plainenglish.io/the-fundamentals-of-datadog-part-1-d30a7f10844d
+
+Section 1: Data Collection
+│   ├── Agents and Integrations to Collect Data from Various Sources
+│   │   ├── Metrics: Numerical Values Representing System Health and Performance
+│   │   ├── Traces: Records of Individual Requests or Transactions
+│   │   └── Logs: Textual Records of Events that Occur in Systems
+│   └── Dashboards to Visualize System Health and Performance
+│       ├── Customizable Visualizations
+│       ├── Drag-and-Drop Interface to Add Widgets
+│       ├── Alert Configuration
+│       └── Sharing with Others
+
+Section 2: Alerts
+│   ├── Threshold Alerts: Triggered When a Metric Crosses a Specific Threshold
+│   ├── Anomaly Alerts: Detect Issues Before They Become Critical
+│   └── Composite Alerts: Combine Multiple Conditions into a Single Alert
+│       ├── Notification Channels: Email, PagerDuty, Slack, etc.
+│       ├── Severity and Frequency Customization
+│       └── Prioritized Alert Management
+
+Section 3: Infrastructure Monitoring
+│   ├── Agents, Integrations, and Auto-Discovery for Data Collection
+│   ├── CPU, Memory, Disk, and Network Usage Metrics
+│   └── Issue Identification and Troubleshooting
+
+Section 4: Application Performance Monitoring (APM)
+│   ├── Insights into Individual Transactions, Services, and Resources
+│   ├── Bottleneck Identification and Application Optimization
+│   ├── Data Collection: Traces, Metrics, and Logs
+│   └── Health and Performance Overview
+
+Section 5: Log Management
+│   ├── Unified View of Logs for Troubleshooting and Insights
+│   ├── Data Collection from Agents, Integrations, and Syslog
+│   ├── Log Parsing, Indexing, Search, Filter, and Analysis
+│   ├── Issue Troubleshooting and System Insights
+
+Section 6: Collaboration and Integration
+│   ├── Custom Visualizations and Sharing
+│   ├── Programmatic Data Access and Manipulation via APIs
+│   └── Streamlined Workflows and Effective Collaboration
+│       ├── Dashboards
+│       ├── APIs
+│       └── Integrations
+
+Section 7: Supported Metrics Types
+│   ├── Host Metrics: CPU, Disk, Network, Memory, etc.
+│   ├── Container Metrics: CPU, Memory, Health Checks, etc.
+│   ├── Cloud Metrics: EC2 CPU, S3 Bucket Size, ELB Latency, etc.
+│   ├── Application Metrics: Response Time, Throughput, Errors, Database Metrics
+│   ├── Custom Metrics: Sent Using API or Other Methods
+│   ├── Log and Trace Metrics: Application Performance and Troubleshooting Insights
+│   └── Compare Datadog vs Elasticsearch
+│       ├── Focus: Monitoring and Analytics vs Search and Analytics
+│       ├── Data Collection: Servers, Containers, Cloud Services, Applications, and Logs vs Large Data Sets
+│       ├── Querying: Limited vs Powerful Query Language
+│       ├── Visualizations: Built-in vs Custom Visualizations
+│       └── Pricing: Commercial vs Open-Source/Cloud-Based
+│   └── Compare Datadog vs Prometheus & Grafana
+│       ├── Architecture: Cloud-Based vs Self-Hosted Open-Source
+│       ├── Data Collection: Servers, Containers, Cloud Services, Applications, and Logs vs Applications and Infrastructure
+│       ├── Querying: Limited vs Powerful Query Language
+│       ├── Visualizations: Robust Visualization Capabilities vs Grafana Dashboards
+│       ├── Alerting: Sophisticated vs Simpler Integrated Alerting System
+│       └── Pricing: Commercial vs Open-Source
+
+================================================================================================
+
+
+
+
+================================================================================================
