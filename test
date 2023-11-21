@@ -366,7 +366,7 @@ Monitoring in DevOps Lifecycle:
 │   │   │       └── Custom Live Log Collections and Analytics
 │   │   ├── Discovering DATADOG:
 │   │   │   ├── Events:
-│   │   │   │   ├── Search, Analyze, and Filter Events from Any Source with Datadog Events Interface
+│   │   │   │   ├── Search Analyze, and Filter Events from Any Source with Datadog Events Interface
 │   │   │   │   ├── Automatic Event Gathering by Datadog Events
 │   │   │   │   ├── Support for over 100 Datadog Integrations for Event Gathering
 │   │   │   │   └── Filter by User, Source, Tag, Host, Status, Priority, Incident
@@ -384,7 +384,6 @@ Monitoring in DevOps Lifecycle:
 │   │   │       └── Reduce Latency and Error-Making with Datadog APM
 │   │   └── CI Visibility:
 │   │       ├── Identify Commits that Cause Important Development Outages and Debug Test Failures and Failed Builds
-
 
 ================================================================================================
 https://cherkaskyb.medium.com/the-magic-that-is-datadog-pricing-part-ii-5fa56cd8476e
