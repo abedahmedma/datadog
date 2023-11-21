@@ -7,4 +7,10 @@ using the simplified  hierarchical structure, use │   ├──
 
 =======================
 = DataDog
+= Okta
+Components : 
+= Active directory
+= Advanced Github Security 
+= Peering 
+= Load balancer
 = 

@@ -22,8 +22,6 @@ datadog_user_role
 datadog_monitor_threshold
 datadog_monitor_type_threshold
 
-
-
 datadog_security_monitor
 datadog_ip_range
 datadog_logs_index
@@ -47,7 +45,3 @@ datadog_servicenow_integration
 datadog_chatbot_integration
 datadog_webhook_integration
 datadog_opsgenie_integration
-
-
-
-
