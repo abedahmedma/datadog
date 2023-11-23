@@ -26,3 +26,30 @@ instead
 =======================
 Example of each (using the simplified hierarchical structure)
 =======================
+using the simplified  hierarchical structure, use │   ├── 
+
+Configure the app registration
+
+
+Création de l'application
+Pour la connexion des utilisateurs ainsi que l'attribution des rôles, GPT 4 Enterprise utilise une application Azure AD.
+
+Se rendre sur Entra - Users Opens in new window or tab
+Cliquer sur New user, puis Invite external user
+Renseigner les informations des comptes devant administrer l'application
+Cliquer sur Invite
+
+Se rendre sur Entra - App registration Opens in new window or tab
+Cliquer sur register an application
+Nom de l'app registration: SPN_<application>
+Sélectionner le mode single tenant
+Laisser vide le champ Redirect URI (il sera modifié plus tard)
+
+Dans le menu Owners
+Cliquer sur Add owners
+Sélectionner les comptes qui doivent pouvoir administrer l'application
+Cliquer sur Select
+
+Dans le menu API permissions
+Cliquer sur Grant admin consent for <tenant>
+Cliquer sur Yes
