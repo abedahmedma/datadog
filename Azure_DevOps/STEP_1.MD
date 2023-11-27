@@ -1,6 +1,6 @@
 = Components to master in DataDog (without explanation, in keywords only)
 
-using the simplified version, use │   ├── 
+using the simplified version, use │ ├──
 
 =============
 
